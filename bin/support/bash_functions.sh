@@ -37,7 +37,8 @@ install_bootstrap_ruby()
     arch=$(dpkg --print-architecture)
     local heroku_buildpack_ruby_dir="$buildpack_dir/vendor/ruby/$STACK/$arch"
   else
-    local heroku_buildpack_ruby_dir="$buildpack_dir/vendor/ruby/$STACK"
+    # hardcode $stack to heroku-20
+    local heroku_buildpack_ruby_dir="$buildpack_dir/vendor/ruby/heroku-20"
   fi
 
   # The -d flag checks to see if a file exists and is a directory.
