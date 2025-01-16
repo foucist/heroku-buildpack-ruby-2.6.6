@@ -34,7 +34,8 @@ ruby_url() {
     arch=$(dpkg --print-architecture)
     echo "${BUILDPACK_VENDOR_URL:-https://heroku-buildpack-ruby.s3.us-east-1.amazonaws.com}/$stack/$arch/ruby-$version.tgz"
   else
-    echo "${BUILDPACK_VENDOR_URL:-https://heroku-buildpack-ruby.s3.us-east-1.amazonaws.com}/$stack/ruby-$version.tgz"
+    # To hardcode $stack to 20
+    echo "${BUILDPACK_VENDOR_URL:-https://heroku-buildpack-ruby.s3.us-east-1.amazonaws.com}/20/ruby-$version.tgz"
   fi
 }
 
